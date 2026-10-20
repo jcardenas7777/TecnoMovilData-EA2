@@ -1,25 +1,28 @@
 package tecnomovil;
-/*import java.time.LocalDateTime;
+
+import java.time.LocalDateTime;
 import tecnomovil.model.Accion;
 import tecnomovil.model.Registro;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import tecnomovil.analytics.AnalizadorTransporte;
+import tecnomovil.data.Catalogo;
+import tecnomovil.data.GeneradorDatos;
+
+
 public class Main {
 
 public static void main(String[] args) {
 Registro r = new Registro(1, "T1", "Central", Accion.ENTRADA, LocalDateTime.of(2026, 3, 16, 7, 0));
 System.out.println(r);
 System.out.println("Estación: " + r.estacion());
+ejecutarAnalisisDePrueba();
+ejecutarAnalisisCompleto();
 
 }
-}*/
 
-/*import java.time.LocalDateTime;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import tecnomovil.analytics.AnalizadorTransporte;
-import tecnomovil.model.Accion;
-import tecnomovil.model.Registro;
-public class Main {
+
 // Atajo para crear registros del día 16/03/2026 con una hora "HH:mm:ss"
 private static Registro reg(int u, String ruta, String est, Accion a, String hora) {
 return new Registro(u, ruta, est, a, LocalDateTime.parse("2026-03-16T" + hora));
@@ -38,7 +41,9 @@ reg(1, "A1", "C", Accion.SALIDA, "17:06:00")).stream()
 .sorted(Comparator.comparing(Registro::timestamp))
 .toList();
 }
-public static void main(String[] args) {
+
+private static void ejecutarAnalisisDePrueba() {
+
 List<Registro> registros = datosDePrueba();
 AnalizadorTransporte analizador = new AnalizadorTransporte(false);
 System.out.println("Tarea 1 - Afluencia por estación: " + analizador.afluenciaPorEstacion(registros));
@@ -60,23 +65,15 @@ System.out.println("Extra - Afluencia 7:00 a 8:59: " + analizador.afluenciaPorEs
 
 
 
-}*/
 
 
-
-
-import java.util.List;
-import java.util.Map;
-import tecnomovil.analytics.AnalizadorTransporte;
-import tecnomovil.data.Catalogo;
-import tecnomovil.data.GeneradorDatos;
-import tecnomovil.model.Registro;
-public class Main {
-public static void main(String[] args) {
+private static void ejecutarAnalisisCompleto() {
 // 1. Datos simulados (misma semilla = mismos datos siempre)
 List<Registro> registros = GeneradorDatos.generar(120_000, 2026L);
 System.out.printf("Registros generados: %,d%n%n", registros.size());
 AnalizadorTransporte analizador = new AnalizadorTransporte(false);
+
+
 // 2. Las seis tareas
 System.out.println("--- 1) Afluencia por estación (top 5) ---");
 AnalizadorTransporte.topN(analizador.afluenciaPorEstacion(registros), 5)
