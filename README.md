@@ -19,7 +19,7 @@ Este repositorio contiene la solución del proyecto **TecnoMovil Data**, un mód
 
 ---
 
-## 📌 Información del Proyecto
+##  Información del Proyecto
 
 * **Institución:** Institución Universitaria Digital de Antioquia
 * **Programa:** Ingeniería de Software y Datos
@@ -30,7 +30,7 @@ Este repositorio contiene la solución del proyecto **TecnoMovil Data**, un mód
 
 ---
 
-## 🚀 Características y Requerimientos Resueltos
+##  Características y Requerimientos Resueltos
 
 El sistema procesa y analiza un dataset simulado de más de 600.000 registros diarios[cite: 1] mediante pipelines declarativos con la API de `Stream` de Java[cite: 1], respondiendo a 6 requerimientos analíticos clave:
 
@@ -43,7 +43,7 @@ El sistema procesa y analiza un dataset simulado de más de 600.000 registros di
 
 ---
 
-## 💡 Conceptos Funcionales Aplicados
+##  Conceptos Funcionales Aplicados
 
 * **Inmutabilidad:** Modelado del dominio mediante Java `record` (`Registro`, `Ruta`, `EstadoRuta`)[cite: 1] y colecciones de solo lectura (`List.copyOf`, `Collections::unmodifiableMap`)[cite: 1].
 * **Funciones Puras:** Métodos analíticos deterministas y libres de efectos secundarios[cite: 1].
@@ -75,14 +75,14 @@ TecnoMovilData/
 
 ---
 
-## 🛠️ Requisitos e Instalación
+##  Requisitos e Instalación
 
 * **Java Development Kit (JDK):** Versión 17 o superior (desarrollado y probado en JDK 25)[cite: 1].
 * **IDE recomendado:** VS Code, IntelliJ IDEA o Eclipse (no requiere herramientas de construcción externas como Maven o Gradle).
 
 ---
 
-## 💻 Compilación y Ejecución
+## 💻Compilación y Ejecución
 
 Desde la terminal, posicionándose dentro del directorio raíz del código fuente (`src/`):
 
